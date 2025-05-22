@@ -27,9 +27,6 @@ export default function CoursePage() {
     fetchData();
   }, []);
 
-  console.log("slug", slug);
-  console.log("courses", courses);
-
   const decodedSlug = decodeURIComponent(typeof slug === "string" ? slug : "");
 
   const matchedCourse = courses.find(

@@ -3,13 +3,11 @@ import Hero from "@/components/Hero";
 import { CourseCard } from "@/components/cards/CourseCard";
 import { WobbleCardDemo } from "@/components/demo/WobbleCardDemo";
 import { InfiniteMovingCardsDemo } from "@/components/demo/InfiniteMovingCardsDemo";
-import { fetchCourses } from "@/services/courseService";
+import { Course, fetchCourses } from "@/services/courseService";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [courses, setCourses] = useState<
-    { title: string; description: string; price: number }[]
-  >([]);
+  const [courses, setCourses] = useState<Course[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {

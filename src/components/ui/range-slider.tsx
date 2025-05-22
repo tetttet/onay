@@ -9,7 +9,12 @@ interface RangeSliderProps {
   MAX: number;
 }
 
-const RangeSlider: React.FC<RangeSliderProps> = ({ priceRange, setPriceRange, MIN, MAX }) => {
+const RangeSlider: React.FC<RangeSliderProps> = ({
+  priceRange,
+  setPriceRange,
+  MIN,
+  MAX,
+}) => {
   return (
     <div className="w-72">
       <Range
@@ -38,14 +43,13 @@ const RangeSlider: React.FC<RangeSliderProps> = ({ priceRange, setPriceRange, MI
           </div>
         )}
         renderThumb={({ props, index }) => {
-          const { key, ...restProps } = props;
+          const { style, ...restProps } = props;
 
           return (
             <div
-              key={index}
               {...restProps}
               style={{
-                ...restProps.style,
+                ...style,
                 height: "24px",
                 width: "24px",
                 backgroundColor: "#3b82f6",
